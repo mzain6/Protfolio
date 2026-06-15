@@ -19,13 +19,14 @@ export function HeroSection() {
       {/* Background blobs */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_15%,rgba(173,255,47,0.04),transparent_40%),radial-gradient(circle_at_88%_15%,rgba(132,204,22,0.03),transparent_35%)]" />
       
-      <div className="mx-auto w-full max-w-7xl grid gap-12 lg:grid-cols-[1.15fr_0.85fr] items-center">
-        {/* Left Side: Text Details */}
+      <div className="mx-auto w-full max-w-7xl grid gap-x-12 gap-y-8 grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] items-center">
+        
+        {/* Intro Text Block (Item 1 on mobile, Col 1 on desktop) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center lg:text-left"
+          className="order-1 lg:order-1 text-center lg:text-left flex flex-col items-center lg:items-start"
         >
           {/* Professional Status Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-brand-primary/20 bg-brand-primary/5 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-brand-primary shadow-sm">
@@ -45,9 +46,45 @@ export function HeroSection() {
           <p className="mx-auto lg:mx-0 mt-5 max-w-2xl text-base leading-8 text-slate-400 font-sans light:text-slate-650">
             I specialize in engineering end-to-end AI applications, scaling computer vision (YOLOv8) multi-stream systems, designing local retrieval RAG agents, and developing high-fidelity dashboard control layers.
           </p>
+        </motion.div>
 
+        {/* Profile Photo Block (Item 2 on mobile, Col 2 on desktop) */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+          className="order-2 lg:order-2 mx-auto w-full max-w-sm flex items-center justify-center"
+        >
+          <div className="relative aspect-square w-64 sm:w-80 flex items-center justify-center m-4">
+            
+            {/* Background Glow */}
+            <div className="absolute -inset-4 bg-gradient-to-tr from-brand-primary to-brand-secondary opacity-10 rounded-[2.2rem] blur-2xl dark:opacity-20 pointer-events-none" />
+
+            {/* Photo Container */}
+            <div className="relative h-full w-full p-1 bg-slate-900 rounded-[2rem] shadow-2xl dark:bg-slate-900/60 light:bg-slate-200/80">
+              <div className="relative h-full w-full overflow-hidden rounded-[1.75rem] bg-slate-950">
+                <Image
+                  src="/profile.jpg"
+                  alt="Muhammad Zain Farrukh"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 320px, 65vw"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Buttons & Socials Block (Item 3 on mobile, Col 1 on desktop) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+          className="order-3 lg:order-3 flex flex-col items-center lg:items-start w-full"
+        >
           {/* Buttons */}
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+          <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start w-full sm:w-auto">
             <Link
               href="#projects"
               className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-brand-primary px-6 py-3 font-sans text-sm font-bold text-slate-950 shadow-lg shadow-brand-primary/25 hover:bg-brand-primary/90 hover:-translate-y-0.5 transition-all duration-200"
@@ -86,36 +123,15 @@ export function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Right Side: Photo with Elegant Accent Blur */}
+        {/* Stats Block (Item 4 on mobile, Col 2 on desktop) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-          className="mx-auto w-full max-w-sm flex flex-col items-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="order-4 lg:order-4 mx-auto w-full max-w-sm"
         >
-          {/* Profile Frame with Soft Accent Glow */}
-          <div className="relative aspect-square w-64 sm:w-80 flex items-center justify-center m-4">
-            
-            {/* Background Glow */}
-            <div className="absolute -inset-4 bg-gradient-to-tr from-brand-primary to-brand-secondary opacity-10 rounded-[2.2rem] blur-2xl dark:opacity-20 pointer-events-none" />
-
-            {/* Photo Container */}
-            <div className="relative h-full w-full p-1 bg-slate-900 rounded-[2rem] shadow-2xl dark:bg-slate-900/60 light:bg-slate-200/80">
-              <div className="relative h-full w-full overflow-hidden rounded-[1.75rem] bg-slate-950">
-                <Image
-                  src="/profile.jpg"
-                  alt="Muhammad Zain Farrukh"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 320px, 65vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-            </div>
-          </div>
-
           {/* Elegant Stats Badges */}
-          <div className="mt-8 w-full grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             {stats.map((stat) => (
               <div 
                 key={stat.label} 
@@ -131,6 +147,7 @@ export function HeroSection() {
             ))}
           </div>
         </motion.div>
+
       </div>
     </section>
   );
