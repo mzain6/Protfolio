@@ -25,7 +25,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="group relative rounded-full px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-slate-400 transition hover:text-white light:text-slate-650 light:hover:text-slate-900"
+              className="group relative rounded-full px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-slate-400 transition hover:text-white light:text-slate-600 light:hover:text-slate-900"
             >
               {item.label}
               <span className="absolute bottom-0 left-4 right-4 h-[2px] w-0 bg-brand-primary transition-all duration-200 group-hover:w-[calc(100%-2rem)]" />

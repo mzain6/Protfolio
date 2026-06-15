@@ -75,7 +75,7 @@ export function ProjectsSection() {
                 <h3 className="font-sans text-lg font-bold tracking-tight text-white light:text-slate-900">
                   {project.title}
                 </h3>
-                <p className="mt-3 font-sans text-sm leading-6 text-slate-400 light:text-slate-655">
+                <p className="mt-3 font-sans text-sm leading-6 text-slate-400 light:text-slate-600">
                   {project.description}
                 </p>
 
@@ -84,7 +84,7 @@ export function ProjectsSection() {
                   {project.tech.map((tech) => (
                     <span 
                       key={tech} 
-                      className="rounded bg-slate-950/80 px-2.5 py-1 font-sans text-[10px] font-semibold text-slate-450 border border-slate-800/80 light:bg-slate-50 light:border-slate-250 light:text-slate-500"
+                      className="rounded bg-slate-950/80 px-2.5 py-1 font-sans text-[10px] font-semibold text-slate-400 border border-slate-800/80 light:bg-slate-50 light:border-slate-200 light:text-slate-500"
                     >
                       {tech}
                     </span>
@@ -109,7 +109,7 @@ export function ProjectsSection() {
                     href={project.liveHref}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-slate-700 bg-slate-800/40 px-4 py-2 font-sans text-xs font-bold text-slate-200 hover:border-slate-500 hover:text-white transition-colors duration-200 light:border-slate-300 light:bg-slate-50 light:text-slate-705 light:hover:border-slate-400 light:hover:text-slate-900"
+                    className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-slate-700 bg-slate-800/40 px-4 py-2 font-sans text-xs font-bold text-slate-200 hover:border-slate-500 hover:text-white transition-colors duration-200 light:border-slate-300 light:bg-slate-50 light:text-slate-700 light:hover:border-slate-400 light:hover:text-slate-900"
                   >
                     <ExternalLink className="h-3.5 w-3.5 text-brand-primary" />
                     <span>Live Demo</span>

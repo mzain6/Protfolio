@@ -19,7 +19,7 @@ export function ResumeSection() {
             Muhammad Zain Farrukh
           </h3>
           
-          <p className="mt-4 font-sans text-sm leading-6 text-slate-400 light:text-slate-650">
+          <p className="mt-4 font-sans text-sm leading-6 text-slate-400 light:text-slate-600">
             AI/ML Engineer & Full-Stack Developer specialized in YOLOv8 multi-stream computer vision scaling, automated scraper networks, RAG search pipelines, and backend microservices.
           </p>
 
@@ -27,7 +27,7 @@ export function ResumeSection() {
             <a
               href="/resume.pdf"
               download
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-primary px-5 py-3 font-sans text-sm font-bold text-white shadow-lg shadow-brand-primary/25 hover:bg-brand-primary/90 transition-colors duration-200"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-primary px-5 py-3 font-sans text-sm font-bold text-slate-950 shadow-lg shadow-brand-primary/25 hover:bg-brand-primary/90 transition-colors duration-200"
             >
               <Download className="h-4 w-4" />
               <span>Download CV</span>
@@ -47,7 +47,7 @@ export function ResumeSection() {
 
         {/* Right Side: PDF Preview */}
         <div className="rounded-2xl border border-slate-200/5 bg-slate-900/40 overflow-hidden shadow-card dark:border-slate-800/50 light:border-slate-200 light:bg-white">
-          <div className="h-8 bg-slate-950 border-b border-slate-250/5 px-4 flex items-center justify-between font-sans text-xs text-slate-400 select-none light:bg-slate-100 light:border-slate-200 light:text-slate-600">
+          <div className="h-8 bg-slate-950 border-b border-slate-800/5 px-4 flex items-center justify-between font-sans text-xs text-slate-400 select-none light:bg-slate-100 light:border-slate-200 light:text-slate-600">
             <span className="flex items-center gap-1.5 font-semibold">
               <span className="h-2 w-2 rounded-full bg-brand-primary" />
               <span>CV_Zain_Farrukh.pdf</span>

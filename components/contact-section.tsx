@@ -25,7 +25,7 @@ export function ContactSection() {
             Direct Channels
           </h3>
           
-          <p className="font-sans text-sm leading-6 text-slate-400 light:text-slate-650 text-center sm:text-left">
+          <p className="font-sans text-sm leading-6 text-slate-400 light:text-slate-600 text-center sm:text-left">
             Reach out directly through any of these secure endpoints. I will respond to your inquiry within 24 hours.
           </p>
 

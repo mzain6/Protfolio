@@ -17,7 +17,7 @@ export function ExperienceSection() {
           <div key={item.role} className="relative mb-12 last:mb-0 pl-6 sm:pl-8 group">
             
             {/* Timeline Circle */}
-            <span className="absolute -left-[14px] top-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-slate-950 border border-slate-800 group-hover:border-brand-primary transition-colors duration-300 light:bg-slate-150 light:border-slate-300">
+            <span className="absolute -left-[14px] top-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-slate-950 border border-slate-800 group-hover:border-brand-primary transition-colors duration-300 light:bg-slate-100 light:border-slate-300">
               <span className="h-2 w-2 rounded-full bg-slate-700 group-hover:bg-brand-primary transition-colors duration-300 light:bg-slate-400" />
             </span>
 
@@ -31,7 +31,7 @@ export function ExperienceSection() {
                     {item.role}
                   </h3>
                   
-                  <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2 font-sans text-xs text-slate-450 light:text-slate-500">
+                  <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2 font-sans text-xs text-slate-400 light:text-slate-500">
                     <span className="font-semibold text-white light:text-slate-800">
                       {item.company}
                     </span>
@@ -43,14 +43,14 @@ export function ExperienceSection() {
                 </div>
                 
                 {/* Period Badge */}
-                <div className="inline-flex items-center gap-1.5 rounded-full border border-slate-800 bg-slate-950 px-3.5 py-1 font-sans text-xs font-semibold text-slate-400 light:border-slate-200 light:bg-slate-50 light:text-slate-505">
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-slate-800 bg-slate-950 px-3.5 py-1 font-sans text-xs font-semibold text-slate-400 light:border-slate-200 light:bg-slate-50 light:text-slate-500">
                   <Calendar className="h-3.5 w-3.5" />
                   <span>{item.duration}</span>
                 </div>
               </div>
 
               {/* Bullets */}
-              <ul className="mt-6 space-y-3 font-sans text-sm text-slate-400 light:text-slate-650">
+              <ul className="mt-6 space-y-3 font-sans text-sm text-slate-400 light:text-slate-600">
                 {item.bullets.map((bullet, idx) => (
                   <li key={idx} className="flex items-start gap-2.5">
                     <span className="h-1.5 w-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0" />

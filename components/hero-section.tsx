@@ -43,7 +43,7 @@ export function HeroSection() {
             Designing Intelligent Systems & Automation
           </h2>
 
-          <p className="mx-auto lg:mx-0 mt-5 max-w-2xl text-base leading-8 text-slate-400 font-sans light:text-slate-650">
+          <p className="mx-auto lg:mx-0 mt-5 max-w-2xl text-base leading-8 text-slate-400 font-sans light:text-slate-600">
             I specialize in engineering end-to-end AI applications, scaling computer vision (YOLOv8) multi-stream systems, designing local retrieval RAG agents, and developing high-fidelity dashboard control layers.
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ export function HeroSection() {
             <a
               href="/resume.pdf"
               download
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-800 bg-slate-900/40 px-6 py-3 font-sans text-sm font-bold text-slate-200 hover:border-slate-600 hover:text-white hover:-translate-y-0.5 transition-all duration-200 light:border-slate-300 light:bg-slate-50 light:text-slate-705 light:hover:border-slate-400 light:hover:text-slate-900"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-800 bg-slate-900/40 px-6 py-3 font-sans text-sm font-bold text-slate-200 hover:border-slate-600 hover:text-white hover:-translate-y-0.5 transition-all duration-200 light:border-slate-300 light:bg-slate-50 light:text-slate-700 light:hover:border-slate-400 light:hover:text-slate-900"
             >
               <Download className="h-4 w-4 text-brand-primary" />
               <span>Download CV</span>

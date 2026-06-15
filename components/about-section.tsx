@@ -48,7 +48,7 @@ export function AboutSection() {
               {item.title}
             </h3>
             
-            <p className="mt-3 font-sans text-sm leading-6 text-slate-400 light:text-slate-650">
+            <p className="mt-3 font-sans text-sm leading-6 text-slate-400 light:text-slate-600">
               {item.text}
             </p>
           </div>
