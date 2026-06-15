@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-geist-sans: "Geist", "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #050508;
+  background-image: radial-gradient(rgba(173, 255, 47, 0.02) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  background-position: center;
+  color: #f1f5f9;
+  font-family: var(--font-geist-sans);
+  letter-spacing: -0.01em;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Professional Light Theme */
+.light {
+  color-scheme: light;
+}
+
+.light body {
+  background-color: #f8fafc;
+  background-image: radial-gradient(rgba(132, 204, 22, 0.035) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  color: #0f172a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Soft Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #adff2f;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Selection */
+::selection {
+  background: rgba(173, 255, 47, 0.2);
+  color: #ffffff;
+}
+
+/* Premium Card utilities */
+.pro-card {
+  background-color: rgba(12, 12, 16, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  border-radius: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pro-card:hover {
+  border-color: rgba(173, 255, 47, 0.25);
+  box-shadow: 0 20px 40px rgba(173, 255, 47, 0.04);
+  transform: translateY(-2px);
+}
+
+.light .pro-card {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02);
+  color: #0f172a;
+}
+
+.light .pro-card:hover {
+  border-color: rgba(132, 204, 22, 0.25);
+  box-shadow: 0 20px 40px rgba(132, 204, 22, 0.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
