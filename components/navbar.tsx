@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { navItems } from "@/data/portfolio";
-import { ThemeToggle } from "./theme-toggle";
+
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +40,7 @@ export function Navbar() {
             <span>Available for Hire</span>
           </div>
 
-          <ThemeToggle />
+
           
           <button
             type="button"
