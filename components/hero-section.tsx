@@ -156,7 +156,7 @@ export function HeroSection() {
               <div className="absolute inset-2 rounded-full bg-[radial-gradient(circle_at_center,rgba(173,255,47,0.14),transparent_65%)] pointer-events-none" />
               
               {/* Profile Image (peeking out) */}
-              <div className="relative h-[115%] w-[115%] -bottom-[7.5%] overflow-visible">
+              <div className="relative h-[145%] w-[145%] -bottom-[6%] overflow-visible">
                 <Image
                   src="/profile.png"
                   alt="Muhammad Zain Farrukh"
