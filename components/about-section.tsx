@@ -11,7 +11,7 @@ const aboutItems = [
   {
     icon: BriefcaseBusiness,
     title: "Bitbash Internship",
-    text: "Currently an Automation Engineer Intern at Bitbash, building practical bots, RAG pipelines, and full-stack crypto sentries."
+    text: "Completed an Automation Engineering internship at Bitbash, where I developed advanced scraping loops, robust search RAG pipelines, and full-stack monitoring systems."
   },
   {
     icon: Sparkles,
