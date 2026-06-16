@@ -155,8 +155,14 @@ export function HeroSection() {
               {/* Inner Circle Ambient Glow */}
               <div className="absolute inset-2 rounded-full bg-[radial-gradient(circle_at_center,rgba(173,255,47,0.14),transparent_65%)] pointer-events-none" />
               
-              {/* Profile Image (peeking out) */}
-              <div className="relative h-[125%] w-[125%] -bottom-[4%] overflow-visible">
+              {/* Profile Image (peeking out with a smooth bottom fade) */}
+              <div 
+                className="relative h-[135%] w-[135%] -bottom-[5%] overflow-visible"
+                style={{
+                  WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 98%)",
+                  maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 98%)"
+                }}
+              >
                 <Image
                   src="/profile.png"
                   alt="Muhammad Zain Farrukh"
