@@ -1,6 +1,9 @@
 "use client";
 
-import { Download, Github, Linkedin, Mail, Phone, ChevronRight } from "lucide-react";
+import { 
+  Download, Github, Linkedin, Mail, Phone, ChevronRight,
+  Code2, BrainCircuit, Server, Globe2, Eye, Cpu, Terminal, Database, Bot, Sparkles
+} from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +15,22 @@ const iconMap = {
   Email: Mail,
   Phone: Phone
 };
+
+const innerOrbit = [
+  { name: "Python", Icon: Code2 },
+  { name: "YOLOv8", Icon: BrainCircuit },
+  { name: "FastAPI", Icon: Server },
+  { name: "Next.js", Icon: Globe2 },
+  { name: "OpenCV", Icon: Eye }
+];
+
+const outerOrbit = [
+  { name: "PyTorch", Icon: Cpu },
+  { name: "Docker", Icon: Terminal },
+  { name: "PostgreSQL", Icon: Database },
+  { name: "n8n", Icon: Bot },
+  { name: "LLMs / RAG", Icon: Sparkles }
+];
 
 export function HeroSection() {
   return (
@@ -48,31 +67,107 @@ export function HeroSection() {
           </p>
         </motion.div>
 
-        {/* Profile Photo Block (Item 2 on mobile, Col 2 on desktop) */}
+        {/* Profile Photo Block with Tech Orbits (Item 2 on mobile, Col 2 on desktop) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="order-2 lg:order-2 mx-auto w-full max-w-sm flex items-center justify-center"
+          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+          className="order-2 lg:order-2 mx-auto w-full flex items-center justify-center overflow-visible"
         >
-          <div className="relative aspect-square w-64 sm:w-80 flex items-center justify-center m-4">
+          {/* Responsive Scaling Wrapper */}
+          <div className="relative scale-[0.7] xs:scale-[0.8] sm:scale-90 md:scale-100 w-[420px] h-[420px] flex items-center justify-center select-none overflow-visible">
             
-            {/* Background Glow */}
-            <div className="absolute -inset-4 bg-gradient-to-tr from-brand-primary to-brand-secondary opacity-10 rounded-[2.2rem] blur-2xl dark:opacity-20 pointer-events-none" />
+            {/* Ambient Back Glow */}
+            <div className="absolute h-64 w-64 rounded-full bg-brand-primary/10 blur-[60px] dark:bg-brand-primary/15 pointer-events-none" />
 
-            {/* Photo Container */}
-            <div className="relative h-full w-full p-1 bg-slate-900 rounded-[2rem] shadow-2xl dark:bg-slate-900/60 light:bg-slate-200/80">
-              <div className="relative h-full w-full overflow-hidden rounded-[1.75rem] bg-slate-950">
+            {/* Outer Orbit Circle Line */}
+            <div className="absolute h-[380px] w-[380px] rounded-full border border-dashed border-slate-800/40 dark:border-slate-800/20 pointer-events-none" />
+            
+            {/* Inner Orbit Circle Line */}
+            <div className="absolute h-[260px] w-[260px] rounded-full border border-dashed border-slate-800/60 dark:border-slate-800/30 pointer-events-none" />
+
+            {/* Outer Orbit Items Container (Counter-Clockwise Rotation) */}
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ repeat: Infinity, duration: 55, ease: "linear" }}
+              className="absolute inset-0 w-full h-full pointer-events-none"
+            >
+              {outerOrbit.map((item, idx) => {
+                const angle = (idx / outerOrbit.length) * 2 * Math.PI;
+                const r = 190; // Outer radius
+                const x = r * Math.cos(angle);
+                const y = r * Math.sin(angle);
+                return (
+                  <div
+                    key={item.name}
+                    style={{
+                      transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`
+                    }}
+                    className="absolute top-1/2 left-1/2"
+                  >
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ repeat: Infinity, duration: 55, ease: "linear" }}
+                      className="flex items-center gap-1.5 rounded-full border border-slate-800 bg-slate-950/90 px-3 py-1.5 text-[10px] font-bold text-slate-350 shadow-lg backdrop-blur-md hover:border-brand-primary/45 hover:text-white pointer-events-auto transition-colors duration-200"
+                    >
+                      <item.Icon className="h-3 w-3 text-brand-primary" />
+                      <span>{item.name}</span>
+                    </motion.div>
+                  </div>
+                );
+              })}
+            </motion.div>
+
+            {/* Inner Orbit Items Container (Clockwise Rotation) */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
+              className="absolute inset-0 w-full h-full pointer-events-none"
+            >
+              {innerOrbit.map((item, idx) => {
+                const angle = (idx / innerOrbit.length) * 2 * Math.PI;
+                const r = 130; // Inner radius
+                const x = r * Math.cos(angle);
+                const y = r * Math.sin(angle);
+                return (
+                  <div
+                    key={item.name}
+                    style={{
+                      transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`
+                    }}
+                    className="absolute top-1/2 left-1/2"
+                  >
+                    <motion.div
+                      animate={{ rotate: -360 }}
+                      transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
+                      className="flex items-center gap-1.5 rounded-full border border-slate-800 bg-slate-950/90 px-3 py-1.5 text-[10px] font-bold text-slate-350 shadow-lg backdrop-blur-md hover:border-brand-primary/45 hover:text-white pointer-events-auto transition-colors duration-200"
+                    >
+                      <item.Icon className="h-3 w-3 text-brand-primary" />
+                      <span>{item.name}</span>
+                    </motion.div>
+                  </div>
+                );
+              })}
+            </motion.div>
+
+            {/* Central Avatar Frame */}
+            <div className="relative h-48 w-48 sm:h-56 sm:w-56 rounded-full border border-slate-800/80 bg-slate-900/40 dark:bg-slate-900/20 shadow-2xl flex items-center justify-center overflow-visible">
+              {/* Inner Circle Ambient Glow */}
+              <div className="absolute inset-2 rounded-full bg-[radial-gradient(circle_at_center,rgba(173,255,47,0.14),transparent_65%)] pointer-events-none" />
+              
+              {/* Profile Image (peeking out) */}
+              <div className="relative h-[115%] w-[115%] -bottom-[7.5%] overflow-visible">
                 <Image
-                  src="/profile.jpg"
+                  src="/profile.png"
                   alt="Muhammad Zain Farrukh"
                   fill
                   priority
-                  sizes="(min-width: 1024px) 320px, 65vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  sizes="(min-width: 1024px) 250px, 50vw"
+                  className="object-contain object-bottom transition-transform duration-300 hover:scale-105"
                 />
               </div>
             </div>
+
           </div>
         </motion.div>
 
